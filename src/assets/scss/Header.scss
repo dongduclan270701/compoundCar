@@ -1,0 +1,82 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: rgba(217, 217, 217, 0.78);
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+        transition: height 0.5s ease;
+        &.scrolled {
+            height: 70px;
+            .logo {
+                gap: 5px;
+                .svg-logo {
+                    height: 60px;
+                }
+            }
+            .nav {
+                gap: 20px;
+            }
+            .login {
+                padding: 5px 9px;
+            }
+        }
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            .svg-logo {
+                width: 80px;
+                height: 80px;
+                fill: rgba(255, 255, 255, 0);
+            }
+            .text-logo {
+                width: auto;
+                color: #fff;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-transform: uppercase;
+                .text-logo-color {
+                    color: var(--red, #f00);
+                }
+            }
+        }
+        .nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 27px;
+            .nav-item {
+                cursor: pointer;
+                color: #fff;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+            .login {
+                display: flex;
+                padding: 8px 9px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                background: var(--red, #f00);
+            }
+            .login:hover {
+                color: white !important;
+                background: var(--red, rgb(203, 19, 19));
+            }
+            .nav-item:hover {
+                color: var(--red, #f00);
+            }
+        }
+    }
+}

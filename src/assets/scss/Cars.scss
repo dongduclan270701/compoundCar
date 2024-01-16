@@ -1,0 +1,49 @@
+.cars {
+    .cars-content {
+        .title-cars {
+            padding-left: 10px;
+            border-left: 4px solid red;
+            .title-cars-above {
+                color: #000;
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+            .title-cars-under {
+                color: #000;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+        .list-cars {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+            gap: 25px;
+            .item-cars {
+                width: 32%;
+                padding: 0;
+                .item-name-cars {
+                    display:flex;
+                    justify-content: center;
+                    padding:10px 0;
+                    color: #000;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    text-transform: uppercase;
+                }
+                .cars-image {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 30px;
+                }
+            }
+        }
+    }
+}

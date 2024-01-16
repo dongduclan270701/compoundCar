@@ -1,0 +1,74 @@
+.booking {
+    background-color: white;
+    height: 330px;
+    .booking-content {
+        .title-booking {
+            padding: 25px 0;
+            display: flex;
+            gap: 44px;
+            align-items: center;
+            .booking-icon {
+                width: 115px;
+                height: 115px;
+            }
+            .title-booking-content {
+                .title-booking-one {
+                    color: #000;
+                    font-family: Saira Condensed;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    text-transform: uppercase;
+                }
+                .title-booking-two {
+                    color: #000;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    text-transform: uppercase;
+                }
+                .title-booking-three {
+                    color: #000;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+            }
+        }
+        .form-booking {
+            margin: 0;
+            gap: 15px;
+            .form-text {
+                width: 24%;
+                padding: 10px;
+                border-radius: 15px;
+            }
+        }
+        .button-form-booking {
+            width: 162px;
+            height: 53px;
+            border-radius: 15px;
+            background-color: red;
+            color: white;
+            border: none;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        .button-form-booking:hover {
+            color: white !important;
+            background: var(--red, rgb(203, 19, 19));
+        }
+    }
+}
