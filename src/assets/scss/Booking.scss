@@ -74,3 +74,27 @@
         }
     }
 }
+@media only screen and (max-width: 600px) {
+    .booking {
+        background-color: white;
+        height: auto;
+        padding-bottom: 15px;
+        .booking-content {
+            .title-booking {
+                padding: 15px 0;
+                display: flex;
+                gap: 15px;
+                align-items: unset;
+                .booking-icon {
+                    width: 115px;
+                    height: 115px;
+                }
+            }
+            .form-booking {
+                .form-text {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

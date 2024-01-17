@@ -12,22 +12,22 @@ const Index = () => {
                     XE GHÉP BẮC NINH - BẮC GIANG - HÀ NỘI MANG LẠI CHO KHÁCH HÀNG
                 </div>
                 <div className='row quanlity-under'>
-                    <div className='col-md-3 quanlity-under-content'>
+                    <div className='col-6 col-md-3 quanlity-under-content'>
                         <img src={Save} alt='icon' className='quanlity-under-icon'/>
                         <div className='quanlity-under-name'>Tiết kiệm</div>
                         <div className='quanlity-under-desc'>Cam kết giá rẻ nhất và hỗ trợ<br/> khi khách hàng liện hệ lại</div>
                     </div>
-                    <div className='col-md-3 quanlity-under-content'>
+                    <div className='col-6 col-md-3 quanlity-under-content'>
                         <img src={Business} alt='icon' className='quanlity-under-icon'/>
                         <div className='quanlity-under-name'>Trọn gói</div>
                         <div className='quanlity-under-desc'>Khách biết giá trước khi đi và<br/>có dịch vụ chờ</div>
                     </div>
-                    <div className='col-md-3 quanlity-under-content'>
+                    <div className='col-6 col-md-3 quanlity-under-content'>
                         <img src={Like} alt='icon' className='quanlity-under-icon'/>
                         <div className='quanlity-under-name'>Chất lượng xe</div>
                         <div className='quanlity-under-desc'>Xe đời mới - Sang trọng hơn</div>
                     </div>
-                    <div className='col-md-3 quanlity-under-content'>
+                    <div className='col-6 col-md-3 quanlity-under-content'>
                         <img src={Safe} alt='icon' className='quanlity-under-icon'/>
                         <div className='quanlity-under-name'>di chuyển an toàn</div>
                         <div className='quanlity-under-desc'>Tài xế giàu kinh nghiệm,<br/>chạy Tour được</div>

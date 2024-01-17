@@ -11,15 +11,15 @@ const Index = () => {
                     <div className='title-cars-under'>Chúng tôi cung cấp các loại xe cao cấp, uy tín, chất lượng nhất nhằm phục vụ quý khách hàng!</div>
                 </div>
                 <div className='row list-cars'>
-                    <div className='col-md-4 item-cars'>
+                    <div className='col-12 col-md-4 item-cars'>
                         <div className='item-name-cars'>TOYOTA VIOS 4 chỗ</div>
                         <img src={Toyota} className='cars-image' alt="Logo" />
                     </div>
-                    <div className='col-md-4 item-cars'>
+                    <div className='col-12 col-md-4 item-cars'>
                     <div className='item-name-cars'>Mitsubishi 7 chỗ</div>
                         <img src={Mis} className='cars-image' alt="Logo" />
                     </div>
-                    <div className='col-md-4 item-cars'>
+                    <div className='col-12 col-md-4 item-cars'>
                     <div className='item-name-cars'>TOYOTA VIOS 4 chỗ</div>
                         <img src={Toyota} className='cars-image' alt="Logo" />
                     </div>

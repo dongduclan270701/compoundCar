@@ -14,15 +14,15 @@ const Index = () => {
                     </div>
                 </div>
                 <div className='row form-booking'>
-                    <input type='text' name='username' className='col-sm-3 form-text' placeholder='Họ và Tên' />
-                    <input type='text' name='phoneNumber' className='col-sm-3 form-text' placeholder='Số điện thoại' />
-                    <select name="location-one" className='col-sm-3 form-text'>
+                    <input type='text' name='username' className='col-12 col-md-3 form-text' placeholder='Họ và Tên' />
+                    <input type='text' name='phoneNumber' className='col-12 col-md-3 form-text' placeholder='Số điện thoại' />
+                    <select name="location-one" className='col-12 col-md-3 form-text'>
                         <option value="">Chọn nơi đón</option>
                         <option value="volvo">Bắc Giang</option>
                         <option value="saab">Bắc Ninh</option>
                         <option value="mercedes">Hà Nội</option>
                     </select>
-                    <select name="location-two" className='col-sm-3 form-text'>
+                    <select name="location-two" className='col-12 col-md-3 form-text'>
                         <option value="">Chọn nơi đến</option>
                         <option value="volvo">Bắc Giang</option>
                         <option value="saab">Bắc Ninh</option>

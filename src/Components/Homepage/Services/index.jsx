@@ -11,8 +11,8 @@ const Index = () => {
     return (
         <div className='services' id='services'>
             <div className='row container services-content'>
-                <img src={ImageServices} className='col-md-6 services-image' alt="Logo" />
-                <div className='col-md-6 list-services'>
+                <img src={ImageServices} className='col-12 col-md-6 services-image' alt="Logo" />
+                <div className='col-12 col-md-6 list-services'>
                     <div className='title-services'>Các dịch vụ của chúng tôi</div>
                     <div className='content-services'>
                         <img src={Car} className='services-icon' alt="Logo" />
@@ -39,7 +39,7 @@ const Index = () => {
                     </div>
                     <div className='content-services'>
                         <img src={Phone} className='services-icon' alt="Logo" />
-                        <div className='services-icon-content'>0912xxx1232.</div>
+                        <div className='services-icon-content'>0912977981</div>
                     </div>
                     <div className='content-services'>
                         <img src={Day} className='services-icon' alt="Logo" />

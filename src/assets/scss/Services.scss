@@ -1,7 +1,7 @@
 .services {
     margin: 50px 0;
     .services-content {
-        margin:0 auto !important;
+        margin: 0 auto !important;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -12,10 +12,11 @@
         }
         .list-services {
             width: 550px;
-            height: 532px;
+            height: auto;
             flex-shrink: 0;
             border-radius: 15px;
             background: #fff;
+            padding-bottom:10px;
             .title-services {
                 margin: 25px;
                 padding-left: 10px;
@@ -45,6 +46,31 @@
                     font-style: normal;
                     font-weight: 400;
                     line-height: normal;
+                }
+            }
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    .services {
+        .services-content { 
+            gap:10px;
+            .services-image {
+                padding:0;
+                width: auto;
+                height: auto;
+                border-radius: 15px;
+            }
+            .list-services {
+                .title-services {
+                    margin: 25px 5px;
+                }
+                .content-services {
+                    margin: 10px 5px;
+                    .services-icon {
+                    }
+                    .services-icon-content {
+                    }
                 }
             }
         }

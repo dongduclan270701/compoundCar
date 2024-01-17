@@ -39,3 +39,27 @@
         }
     }
 }
+@media only screen and (max-width: 600px) {
+    .container-location {
+        top: 207px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        .location {
+            padding: 15px;
+            gap: 10px;
+            .location-one,
+            .location-two,
+            .location-three {
+                gap: 0px;
+                .location-icon {
+                }
+                .location-content {
+                }
+            }
+            .location-connect-icon {
+                width: 30px;
+            }
+        }
+    }
+}

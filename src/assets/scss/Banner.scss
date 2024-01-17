@@ -1,8 +1,15 @@
 .banner {
-    height: 600px;
-    flex-shrink: 0;
-    background: url('../images/vistara_banner.jpg') -0.101px -109.536px/100.176% 122.026% no-repeat;
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 71%);
+  height: 600px;
+  flex-shrink: 0;
+  background: url("../images/vistara_banner.jpg") -0.101px -109.536px/100.176% 122.026% no-repeat;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 71%);
+  // clip-path: polygon(0 0, 100% 0%, 100% 70%, 0 100%);
+}
+@media only screen and (max-width: 600px) {
+  .banner {
+    height: 300px;
+    background: url("../images/vistara_banner.jpg") -0.101px -59.536px/100.176% 122.026% no-repeat;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 75%);
     // clip-path: polygon(0 0, 100% 0%, 100% 70%, 0 100%);
   }
-  
+}
