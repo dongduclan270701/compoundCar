@@ -9,7 +9,7 @@ import Connect from 'assets/svg/arrow-left-right-svgrepo-com.svg'
 import 'assets/scss/Services.scss'
 const Index = () => {
     return (
-        <div className='services'>
+        <div className='services' id='services'>
             <div className='row container services-content'>
                 <img src={ImageServices} className='col-md-6 services-image' alt="Logo" />
                 <div className='col-md-6 list-services'>

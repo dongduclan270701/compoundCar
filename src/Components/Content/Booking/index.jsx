@@ -3,7 +3,7 @@ import 'assets/scss/Booking.scss'
 import Logo from 'assets/svg/car-white-svgrepo-com.svg'
 const Index = () => {
     return (
-        <div className='booking'>
+        <div className='booking' id='booking'>
             <div className='container booking-content'>
                 <div className='title-booking'>
                     <img src={Logo} className='booking-icon' alt="Logo" />
@@ -18,15 +18,15 @@ const Index = () => {
                     <input type='text' name='phoneNumber' className='col-sm-3 form-text' placeholder='Số điện thoại' />
                     <select name="location-one" className='col-sm-3 form-text'>
                         <option value="">Chọn nơi đón</option>
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
+                        <option value="volvo">Bắc Giang</option>
+                        <option value="saab">Bắc Ninh</option>
+                        <option value="mercedes">Hà Nội</option>
                     </select>
                     <select name="location-two" className='col-sm-3 form-text'>
                         <option value="">Chọn nơi đến</option>
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
+                        <option value="volvo">Bắc Giang</option>
+                        <option value="saab">Bắc Ninh</option>
+                        <option value="mercedes">Hà Nội</option>
                     </select>
                 </div>
                 <button type='submit' className='button-form-booking'>Đặt xe ngay</button>

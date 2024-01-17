@@ -19,29 +19,102 @@
                 line-height: normal;
             }
         }
-        .list-cars {
+    }
+    .board-feedbacks {
+        padding: 0;
+        margin: 25px 0;
+        gap: 10px;
+        .board-left-feedback-information {
+            width: 32%;
+            height: fit-content;
             display: flex;
-            align-items: center;
-            margin: 25px 0;
-            gap: 25px;
-            .item-cars {
-                width: 32%;
-                padding: 0;
-                .item-name-cars {
-                    display:flex;
-                    justify-content: center;
-                    padding:10px 0;
+            flex-direction: column;
+            padding: 20px 40px;
+            background-color: white;
+            border-radius: 15px;
+            gap: 10px;
+            .board-left-feedback-title-information {
+                color: var(--red, #f00);
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+            .board-left-feedback-content-information {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                .board-left-feedback-icon {
+                    width: 35px;
+                    height: 35px;
+                }
+                .board-left-feedback-desc-information {
                     color: #000;
                     font-size: 20px;
                     font-style: normal;
-                    font-weight: 700;
+                    font-weight: 400;
                     line-height: normal;
-                    text-transform: uppercase;
                 }
-                .cars-image {
-                    width: 100%;
-                    height: auto;
-                    border-radius: 30px;
+            }
+        }
+        .board-right-feedback-information {
+            width: 67%;
+            padding: 20px 40px;
+            background-color: white;
+            border-radius: 15px;
+            gap: 10px;
+            .board-right-feedback-title-information {
+                display: flex;
+                justify-content: center;
+                color: var(--red, #f00);
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+            .board-right-feedback-title-under-information {
+                display: flex;
+                justify-content: center;
+                color: #000;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+            .board-right-feedback-content {
+                margin:10px 0;
+                .board-right-list-feedbacks {
+                    padding: 20px;
+                    display:flex;
+                    align-items: center;
+                    gap: 40px;
+                    .board-right-image {
+                        width: 115px;
+                        height: 115px;
+                        border-radius: 50%;
+                    }
+                    .board-right-text {
+                        display:flex;
+                        flex-direction: column;
+                        gap:10px;
+                        .board-right-text-above {
+                            color: #000;
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                        }
+                        .board-right-text-under {
+                            color: #000;
+                            font-size: 20px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: normal;
+                            text-transform: uppercase;
+                        }
+                    }
                 }
             }
         }

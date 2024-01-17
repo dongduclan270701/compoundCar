@@ -10,19 +10,32 @@ import Cars from 'Components/Content/Cars'
 import Feedbacks from 'Components/Content/Feedbacks'
 import Booking from 'Components/Content/Booking'
 import Quanlity from 'Components/Content/Quanlity'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom'
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Banner />
-      <Location />
-      <Services />
-      <Prices />
-      <Cars />
-      <Feedbacks />
-      <Booking />
-      <Quanlity />
-      <Footer />
+      <Router>
+        <Routes>
+          <Route path='/' element={
+            <>
+              <Header />
+              <Banner />
+              <Location />
+              <Services />
+              <Prices />
+              <Cars />
+              <Feedbacks />
+              <Booking />
+              <Quanlity />
+              <Footer />
+            </>
+          } />
+        </Routes>
+      </Router>
     </div>
   );
 }

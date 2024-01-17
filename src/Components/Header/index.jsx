@@ -1,4 +1,5 @@
 import React, { useState, useEffect, memo } from 'react';
+import { NavLink } from "react-router-dom";
 import Logo from 'assets/svg/car-white-svgrepo-com.svg'
 import 'assets/scss/Header.scss'
 const Index = () => {
@@ -22,10 +23,10 @@ const Index = () => {
                     <div className='text-logo'>xe ghép <span className='text-logo-color'>bắc giang - bắc ninh - hà nội</span></div>
                 </div>
                 <div className='nav'>
-                    <div className='nav-item'>Trang chủ</div>
-                    <div className='nav-item'>Book xe</div>
-                    <div className='nav-item'>Đánh giá</div>
-                    <div className='nav-item'>Về chúng tôi</div>
+                    <div className='nav-item'><NavLink className='nav-item' to='/'>Trang chủ</NavLink></div>
+                    <div className='nav-item'><a className='nav-item' href='#booking'>Book xe</a></div>
+                    <div className='nav-item'><a className='nav-item' href='#feedbacks'>Đánh giá</a></div>
+                    <div className='nav-item'><a className='nav-item' href='#services'>Về chúng tôi</a></div>
                     <div className='nav-item login' onClick={() => { return 0 }}>Đăng nhập</div>
                 </div>
             </div>

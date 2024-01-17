@@ -22,7 +22,7 @@
                     text-transform: uppercase;
                 }
                 .title-booking-two {
-                    color: #000;
+                    color: red;
                     font-size: 16px;
                     font-style: normal;
                     font-weight: 700;
@@ -42,9 +42,11 @@
             margin: 0;
             gap: 15px;
             .form-text {
+                border: 1px solid black;
                 width: 24%;
                 padding: 10px;
                 border-radius: 15px;
+                text-align: center;
             }
         }
         .button-form-booking {
