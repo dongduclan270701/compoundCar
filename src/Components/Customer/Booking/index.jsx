@@ -41,6 +41,16 @@ const Index = () => {
         else if (booking.destination.trim() === "" || booking.destination === 0) { showAlert('Chờ đã!', 'Yêu cầu nhập rõ vị trí mà bạn muốn đến!') }
         else if (booking.phoneNumber.trim() === "" || booking.phoneNumber === 0) { showAlert('Chờ đã!', 'Yêu cầu nhập số điện thoại!') }
         else {
+            Swal.fire({
+                title: 'Đang cập nhật!',
+                html: 'Vui lòng chờ...',
+                allowEscapeKey: false,
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading()
+                }
+            });
+            
             bookingCar(booking)
                 .then(result => {
                     const newData = {
@@ -67,6 +77,7 @@ const Index = () => {
                         username: "",
                         phoneNumber: ""
                     })
+                    Swal.close()
                     Swal.fire({
                         title: "Đặt xe thành công",
                         text: "Bạn đã đặt xe thành công, hãy chờ tài xế liên hệ lại cho bạn để xác nhận!",
