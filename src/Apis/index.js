@@ -83,6 +83,6 @@ export const fetchListOfNotice = async () => {
 }
 
 export const fetchPostIP = async () => {
-    const req = await axios.get(`${API_ROOT}/v1/ip/ipUser`)
+    const req = await axios.post(`${API_ROOT}/v1/ip/ipUser`)
     return req.data
 }
