@@ -1,6 +1,6 @@
 .booking {
     background-color: white;
-    height: 330px;
+    height: 400px;
     .booking-content {
         .title-booking {
             padding: 25px 0;
@@ -40,10 +40,10 @@
         }
         .form-booking {
             margin: 0;
-            gap: 15px;
+            // gap:15px;
             .form-text {
                 border: 1px solid black;
-                width: 24%;
+                width: inherit;
                 padding: 10px;
                 border-radius: 15px;
                 text-align: center;
@@ -65,7 +65,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 25px;
             margin-bottom: 25px;
         }
         .button-form-booking:hover {
@@ -92,7 +91,12 @@
             }
             .form-booking {
                 .form-text {
-                    width: 100%;
+                    max-width: 100%;
+                }
+                .booking-mobile{
+                    gap:15px;
+                    display:flex;
+                    flex-direction: column;
                 }
             }
         }

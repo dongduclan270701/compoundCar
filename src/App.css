@@ -4,7 +4,8 @@
   color: black;
   font-family: 'Saira Condensed', sans-serif;
 }
-body{
+
+body {
   background-color: #EDEDED !important;
 }
 
@@ -31,6 +32,103 @@ body{
 }
 
 .container {
+  max-width: 1320px !important;
   margin: 0 auto;
   font-size: 16px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: unset !important
+}
+
+.status-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  padding: 0 !important;
+  /* padding-top:10px; */
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  overflow: visible
+}
+
+.status-dropdown:hover .dropdown-content {
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown-content span {
+  padding: 12px 12px;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown-content span:hover {
+  background-color: #ddd;
+}
+
+.badge-danger {
+  text-align: center;
+  width: 100%;
+  outline: none !important;
+  color: white !important;
+  background-color: #ff0000 !important;
+}
+
+.badge-process {
+  text-align: center;
+  width: 100%;
+  outline: none !important;
+  color: white !important;
+  background-color: #0095ff !important;
+}
+
+.badge-warning {
+  text-align: center;
+  width: 100%;
+  outline: none !important;
+  color: white !important;
+  background-color: #FFC100 !important;
+}
+
+.badge-success {
+  text-align: center;
+  width: 100%;
+  outline: none !important;
+  color: white !important;
+  background-color: #05d94f !important;
+}
+
+.table-cell-container .phone-number {
+  float: left;
+}
+
+.table-cell-container .alert-icon {
+  float: right;
+  margin-left: 10px;
+}
+
+.table-cell-container::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.footerAdmin {
+  background: #F5F7FF !important;
+  padding: 15px 2.45rem !important;
+  transition: all 0.25s ease !important;
+  -moz-transition: all 0.25s ease;
+  -webkit-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  font-size: calc(0.875rem - 0.05rem);
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }

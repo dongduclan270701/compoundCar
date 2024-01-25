@@ -21,20 +21,19 @@
         }
     }
     .board-feedbacks {
-        padding: 0;
+        // padding: 0;
         margin: 25px 0;
-        gap: 10px;
+        // gap: 10px;
         .board-left-feedback-information {
-            width: 32%;
+            // width: 32%;
             height: fit-content;
             display: flex;
             flex-direction: column;
             padding: 20px 40px;
-            background-color: white;
             border-radius: 15px;
             gap: 10px;
             .board-left-feedback-title-information {
-                color: var(--red, #f00);
+                color: red;
                 font-size: 20px;
                 font-style: normal;
                 font-weight: 700;
@@ -67,7 +66,7 @@
             .board-right-feedback-title-information {
                 display: flex;
                 justify-content: center;
-                color: var(--red, #f00);
+                color: red;
                 font-size: 20px;
                 font-style: normal;
                 font-weight: 700;

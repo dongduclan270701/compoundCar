@@ -44,7 +44,7 @@
                 line-height: normal;
                 text-transform: uppercase;
                 .text-logo-color {
-                    color: var(--red, #f00);
+                    color: red;
                 }
             }
         }
@@ -69,14 +69,14 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 10px;
-                background: var(--red, #f00);
+                background: red;
             }
             .login:hover {
                 color: white !important;
                 background: var(--red, rgb(203, 19, 19));
             }
             .nav-item:hover {
-                color: var(--red, #f00);
+                color: red;
             }
         }
     }
@@ -86,6 +86,105 @@
     .menu-mobile {
         display: none;
     }
+}
+.hotline-icon-one-pc{
+    z-index: 999;
+    width: max-content;
+    background: rgb(27, 27, 230);
+    border-radius: 50%;
+    padding: 10px;
+    animation: pulse 1.5s infinite; 
+    .hotline-icon-svg {
+        width: 50px;
+        animation: rotate 1.5s infinite;
+    }
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+}
+.hotline-icon-one-ios{
+    z-index: 999;
+    width: max-content;
+    background: rgb(27, 27, 230);
+    border-radius: 50%;
+    padding: 10px;
+    animation: pulse 1.5s infinite; 
+    .hotline-icon-svg {
+        width: 50px;
+        animation: rotate 1.5s infinite;
+    }
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    display:none
+}
+.hotline-icon-one-android{
+    z-index: 999;
+    width: max-content;
+    background: rgb(27, 27, 230);
+    border-radius: 50%;
+    padding: 10px;
+    animation: pulse 1.5s infinite; 
+    .hotline-icon-svg {
+        width: 50px;
+        animation: rotate 1.5s infinite;
+    }
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    display:none
+}
+.hotline-icon-two{
+    z-index: 999;
+    width: max-content;
+    background: rgb(214, 40, 40);
+    border-radius: 50%;
+    padding: 10px;
+    animation: pulse 1.5s infinite; 
+    .hotline-icon-svg {
+        width: 50px;
+        animation: rotate 1.5s infinite;
+    }
+    position: fixed;
+    bottom: 150px;
+    right: 40px;
+}
+.hotline-icon-three{
+    z-index: 999;
+    width: max-content;
+    background: rgb(255 255 255);
+    border-radius: 50%;
+    padding: 10px;
+    animation: pulse 1.5s infinite; 
+    .hotline-icon-svg {
+        width: 50px;
+        animation: rotate 1.5s infinite;
+    }
+    position: fixed;
+    bottom: 200px;
+    left: 30px;
+    right: 0;
+}
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-15deg);
+      }
+      50% {
+        transform: rotate(15deg);
+      }
+      100% {
+        transform: rotate(-15deg);
+      }
 }
 .toggle-login {
     position: fixed;
@@ -220,7 +319,7 @@
                     line-height: normal;
                     text-transform: uppercase;
                     .text-logo-color {
-                        color: var(--red, #f00);
+                        color: red;
                     }
                 }
             }
@@ -245,8 +344,8 @@
             text-align: center;
             margin-top: 50px;
             padding: 20px 10px;
-            gap:30px;
-            .item-menu-mobile{
+            gap: 30px;
+            .item-menu-mobile {
                 font-size: 20px;
             }
             .login {
@@ -257,12 +356,21 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 10px;
-                background: var(--red, #f00);
+                background: red;
             }
             .login:hover {
                 color: white !important;
                 background: var(--red, rgb(203, 19, 19));
             }
         }
+    }
+    .hotline-icon-one-pc{
+        display:none
+    }
+    .hotline-icon-one-ios{
+        display:flex
+    }
+    .hotline-icon-one-android{
+        display:flex
     }
 }

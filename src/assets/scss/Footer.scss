@@ -1,7 +1,7 @@
 .footer {
-    background: rgba(217, 217, 217, 0.78);
+    background: rgba(217, 217, 217, 0.78) !important;
     height: auto;
-    padding-bottom: 10px;
+    padding: 0 0 10px 0 !important;
     .container {
         .logo {
             display: inline-flex;
@@ -21,14 +21,14 @@
                 line-height: normal;
                 text-transform: uppercase;
                 .text-logo-color {
-                    color: var(--red, #f00);
+                    color: red;
                 }
             }
         }
         .content {
             display: inline-flex;
             align-items: center;
-            gap: 520px;
+            gap: 510px;
             .content-hotline {
                 display: flex;
                 flex-direction: column;

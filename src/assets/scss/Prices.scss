@@ -14,11 +14,8 @@
             display: flex;
             justify-content: space-between;
             margin: 25px 0;
-            gap:10px;
+            // gap:10px;
             .table-prices-content {
-                width:49% !important;
-                padding: 0 !important;
-                margin:0 !important;
                 .title-table-prices {
                     width: -webkit-fill-available;
                     display: inline-flex;
@@ -70,7 +67,6 @@
                 margin: 25px 0;
                 gap:15px;
                 .table-prices-content {
-                    width:100% !important;
                     .title-table-prices {
                         padding: 5px 23px;
                         font-size: 16px;
