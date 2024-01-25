@@ -78,6 +78,12 @@ const Index = () => {
                 }
             })
             .catch(error => {
+                Swal.fire({
+                    title: "Ops!",
+                    text: "Error connect to server!",
+                    icon: 'error',
+                    confirmButtonText: 'OK!'
+                })
                 console.log(error)
             })
         }
@@ -101,6 +107,12 @@ const Index = () => {
                     }
                 })
                 .catch(error => {
+                    Swal.fire({
+                        title: "Ops!",
+                        text: "Error connect to server!",
+                        icon: 'error',
+                        confirmButtonText: 'OK!'
+                    })
                     console.log(error)
                 })
         }

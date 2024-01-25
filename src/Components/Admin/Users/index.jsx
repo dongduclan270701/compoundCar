@@ -69,6 +69,16 @@ const Index = () => {
         })
             .then((result) => {
                 if (result.isConfirmed) {
+                    Swal.fire({
+                        title: 'Đang cập nhật!',
+                        html: 'Vui lòng chờ...',
+                        allowEscapeKey: false,
+                        allowOutsideClick: false,
+                        didOpen: () => {
+                            Swal.showLoading()
+                        }
+                    });
+                    
                     const data = { ...user, status: statusUser === 'Khoá' ? false : true }
                     fetchUpdateUser(user.phoneNumber, data)
                         .then(result => {
@@ -76,6 +86,7 @@ const Index = () => {
                                 item.phoneNumber === data.phoneNumber ? { ...item, status: data.status } : item
                             );
                             setUserList(updatedOrderList)
+                            Swal.close()
                             Swal.fire({
                                 title: 'Cập nhật thành công',
                                 icon: 'success',
@@ -95,6 +106,15 @@ const Index = () => {
 
     }
     const handleAddBlackList = (user) => {
+        Swal.fire({
+            title: 'Đang kiểm tra!',
+            html: 'Vui lòng chờ...',
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading()
+            }
+        });
         fetchInformationBlackListUser(user.phoneNumber)
             .then(result => {
                 if (result.message === "Not found account user") {
@@ -107,8 +127,18 @@ const Index = () => {
                     })
                         .then((result) => {
                             if (result.isConfirmed) {
+                                Swal.fire({
+                                    title: 'Đang cập nhật!',
+                                    html: 'Vui lòng chờ...',
+                                    allowEscapeKey: false,
+                                    allowOutsideClick: false,
+                                    didOpen: () => {
+                                        Swal.showLoading()
+                                    }
+                                });
                                 fetchBlackListUser({ phoneNumber: user.phoneNumber })
                                     .then(result => {
+                                        Swal.close()
                                         if (result === 'Phone number already exists') {
                                             Swal.fire({
                                                 title: 'Số điện thoại này thuộc danh sách đen',
@@ -125,6 +155,12 @@ const Index = () => {
                                         }
                                     })
                                     .catch(error => {
+                                        Swal.fire({
+                                            title: "Ops!",
+                                            text: "Error connect to server!",
+                                            icon: 'error',
+                                            confirmButtonText: 'OK!'
+                                        })
                                         console.log(error)
                                     })
                             }
@@ -138,6 +174,12 @@ const Index = () => {
                 }
             })
             .catch(error => {
+                Swal.fire({
+                    title: "Ops!",
+                    text: "Error connect to server!",
+                    icon: 'error',
+                    confirmButtonText: 'OK!'
+                })
                 console.log(error)
             })
 
@@ -193,12 +235,12 @@ const Index = () => {
                                         </p>
                                     </div>
                                     <ul className="col-lg-3 navbar-nav" style={{ "paddingBottom": "15px", "paddingLeft": "15px" }}>
-                                        <input name='phoneNumber' onChange={e => handleSearchOrder(e)} style={{ borderRadius: "15px" }} type="text" className="form-control" placeholder="Số điện thoại" aria-label="Số điện thoại" />
+                                        <input name='phoneNumber' nBlur={() => setInputFocused(false)} onFocus={() => setInputFocused(true)} onChange={e => handleSearchOrder(e)} style={{ borderRadius: "15px" }} type="text" className="form-control" placeholder="Số điện thoại" aria-label="Số điện thoại" />
                                     </ul>
                                     <ul className="col-lg-3 navbar-nav" style={{ "paddingBottom": "15px", "paddingLeft": "15px" }}>
                                         <li className="nav-item nav-search d-lg-block">
                                             <div className="input-group">
-                                            <select name='status' style={{ borderRadius: "15px" }} onChange={e => handleSearchOrder(e)} type="text" className="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search" >
+                                            <select name='status' style={{ borderRadius: "15px" }}nBlur={() => setInputFocused(false)} onFocus={() => setInputFocused(true)} onChange={e => handleSearchOrder(e)} type="text" className="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search" >
                                                     <option value=''>Tất cả</option>\
                                                     {optionSelect.map((item, index) => {
                                                         return <option key={index} value={item === "Hoạt động" ? true: false}>{item}</option>

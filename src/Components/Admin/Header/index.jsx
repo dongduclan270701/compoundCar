@@ -3,7 +3,7 @@ import logo from 'assets/svg/car-white-svgrepo-com.svg'
 import logoMini from 'assets/svg/car-white-svgrepo-com.svg'
 import faceUser from "assets/images/face2.jpg"
 import { NavLink } from 'react-router-dom'
-import {fetchListOfNotice} from 'Apis'
+import { fetchListOfNotice, fetchUpdateNotice } from 'Apis'
 
 const Index = (props) => {
     const { getChooseSettingThemePages, isChooseShowIcons, onHandleGetSettingChooseShowIconOnly, isShowSideBarRes, onHandleGetShowSideBarRes } = props
@@ -25,7 +25,21 @@ const Index = (props) => {
     }, []);
 
     const handleReadNotice = (id, isReadAdmin) => {
-
+        if (!isReadAdmin) {
+            fetchUpdateNotice({ id: id })
+                .then(result => {
+                    const updatedArray = listNotice.map(item => {
+                        if (item._id === result._id) {
+                            return { ...item, isReadAdmin: true };
+                        }
+                        return item;
+                    });
+                    setListNotice(updatedArray)
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        }
     }
 
     return (
@@ -69,7 +83,7 @@ const Index = (props) => {
                     </li>
                     <li className='nav-item nav-profile dropdown'>
                         <span className="nav-link dropdown-toggle" data-toggle="dropdown" id="profileDropdown">
-                            <img src={faceUser} alt="profile" />
+                            <img src={logoMini} alt="profile" />
                         </span>
                         <div className={chooseSettingUser ? "dropdown-menu dropdown-menu-right navbar-dropdown show" : "dropdown-menu dropdown-menu-right navbar-dropdown"} aria-labelledby="profileDropdown">
                             <span className="dropdown-item">

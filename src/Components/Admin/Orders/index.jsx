@@ -77,6 +77,16 @@ const Index = () => {
         })
             .then((result) => {
                 if (result.isConfirmed) {
+                    Swal.fire({
+                        title: 'Đang cập nhật!',
+                        html: 'Vui lòng chờ...',
+                        allowEscapeKey: false,
+                        allowOutsideClick: false,
+                        didOpen: () => {
+                            Swal.showLoading()
+                        }
+                    });
+                    
                     const data = { ...order, status }
                     fetchUpdateOrder(data.orderId, data)
                         .then(result => {
@@ -84,6 +94,7 @@ const Index = () => {
                                 item.orderId === data.orderId ? { ...item, status: data.status } : item
                             );
                             setOrderList(updatedOrderList)
+                            Swal.close()
                             Swal.fire({
                                 title: 'Cập nhật đơn thành công',
                                 text: `Đơn đã chuyển sang ${status}`,
@@ -141,8 +152,18 @@ const Index = () => {
     }
 
     const handleAddBlackListUser = (user) => {
+        Swal.fire({
+            title: 'Đang kiểm tra!',
+            html: 'Vui lòng chờ...',
+            allowEscapeKey: false,
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading()
+            }
+        });
         fetchInformationBlackListUser(user.phoneNumber)
             .then(result => {
+                Swal.close()
                 if (result.message === "Not found account user") {
                     Swal.fire({
                         title: 'Bạn muốn chuyển người dùng này vào danh sách đen?',
@@ -153,8 +174,19 @@ const Index = () => {
                     })
                         .then((result) => {
                             if (result.isConfirmed) {
+                                Swal.fire({
+                                    title: 'Đang cập nhật!',
+                                    html: 'Vui lòng chờ...',
+                                    allowEscapeKey: false,
+                                    allowOutsideClick: false,
+                                    didOpen: () => {
+                                        Swal.showLoading()
+                                    }
+                                });
+                                
                                 fetchBlackListUser({ phoneNumber: user.phoneNumber })
                                     .then(result => {
+                                        Swal.close()
                                         if (result === 'Phone number already exists') {
                                             Swal.fire({
                                                 title: 'Số điện thoại này thuộc danh sách đen',
@@ -171,6 +203,12 @@ const Index = () => {
                                         }
                                     })
                                     .catch(error => {
+                                        Swal.fire({
+                                            title: "Ops!",
+                                            text: "Error connect to server!",
+                                            icon: 'error',
+                                            confirmButtonText: 'OK!'
+                                        })
                                         console.log(error)
                                     })
                             }
@@ -184,6 +222,12 @@ const Index = () => {
                 }
             })
             .catch(error => {
+                Swal.fire({
+                    title: "Ops!",
+                    text: "Error connect to server!",
+                    icon: 'error',
+                    confirmButtonText: 'OK!'
+                })
                 console.log(error)
             })
 

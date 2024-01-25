@@ -76,6 +76,12 @@ const Index = () => {
                     setIsBooking(false)
                 })
                 .catch(error => {
+                    Swal.fire({
+                        title: "Ops!",
+                        text: "Error connect to server!",
+                        icon: 'error',
+                        confirmButtonText: 'OK!'
+                    })
                     console.log(error)
                 })
         }

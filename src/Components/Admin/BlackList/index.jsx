@@ -64,26 +64,35 @@ const Index = () => {
         })
             .then((result) => {
                 if (result.isConfirmed) {
-                    if (result.isConfirmed) {
-                        fetchUpdateBlackListUser(user.phoneNumber, user)
-                            .then(result => {
-                                const filteredArray = userList.filter(item => item.phoneNumber !== user.phoneNumber);
-                                setUserList(filteredArray)
-                                Swal.fire({
-                                    title: 'Cập nhật thành công',
-                                    icon: 'success',
-                                    confirmButtonText: 'OK!'
-                                });
-                            })
-                            .catch(error => {
-                                Swal.fire({
-                                    title: 'Cập nhật thất bại',
-                                    icon: 'error',
-                                    confirmButtonText: 'OK!'
-                                });
-                                console.log(error)
-                            })
-                    }
+                    Swal.fire({
+                        title: 'Đang cập nhật!',
+                        html: 'Vui lòng chờ...',
+                        allowEscapeKey: false,
+                        allowOutsideClick: false,
+                        didOpen: () => {
+                            Swal.showLoading()
+                        }
+                    });
+                    
+                    fetchUpdateBlackListUser(user.phoneNumber, user)
+                        .then(result => {
+                            const filteredArray = userList.filter(item => item.phoneNumber !== user.phoneNumber);
+                            setUserList(filteredArray)
+                            Swal.close()
+                            Swal.fire({
+                                title: 'Cập nhật thành công',
+                                icon: 'success',
+                                confirmButtonText: 'OK!'
+                            });
+                        })
+                        .catch(error => {
+                            Swal.fire({
+                                title: 'Cập nhật thất bại',
+                                icon: 'error',
+                                confirmButtonText: 'OK!'
+                            });
+                            console.log(error)
+                        })
                 }
             })
     }
@@ -137,7 +146,7 @@ const Index = () => {
                                         </p>
                                     </div>
                                     <ul className="col-lg-3 navbar-nav" style={{ "paddingBottom": "15px", "paddingLeft": "15px" }}>
-                                        <input name='phoneNumber' onChange={e => handleSearchOrder(e)} style={{ borderRadius: "15px" }} type="text" className="form-control" placeholder="Số điện thoại" aria-label="Số điện thoại" />
+                                        <input name='phoneNumber' onChange={e => handleSearchOrder(e)} nBlur={() => setInputFocused(false)} onFocus={() => setInputFocused(true)} style={{ borderRadius: "15px" }} type="text" className="form-control" placeholder="Số điện thoại" aria-label="Số điện thoại" />
                                     </ul>
                                 </div>
                                 {userList ? <>

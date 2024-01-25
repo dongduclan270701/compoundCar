@@ -1,7 +1,6 @@
 import React from 'react';
 import Logo from 'assets/svg/car-white-svgrepo-com.svg'
 import 'assets/scss/Footer.scss'
-
 const Index = () => {
     return (
         <div className='footer'>
@@ -21,6 +20,12 @@ const Index = () => {
                         <div className='content-desc'>Với bất kỳ lý do nào khiến bạn không hài lòng về chất lượng dịch vụ, chúng tôi sẽ có chính sách hoàn tiền 100% cho khách hàng.</div>
                     </div>
                 </div>
+                <footer className="footerAdmin" style={{background:'none' ,padding:'15px 0'}}>
+                    <div className="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span className="text-muted text-center text-sm-left d-block d-sm-inline-block">Website created by <a href="https://www.facebook.com/kass277">Kass ( Đồng Đức Lân )</a> - Gmail: dongduclan277@gmail.com - Hotline: 0379382992</span>
+                        <span className="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted &amp; made with <i className="ti-heart text-danger ml-1" /></span>
+                    </div>
+                </footer>
             </div>
         </div>
     );

@@ -2,63 +2,54 @@ import React, { useState, useEffect } from 'react';
 import { } from 'Apis'
 import Swal from 'sweetalert2'
 import FooterAdmin from 'Components/Admin/Footer'
+import { fetchListIP, fetchSearchIp } from 'Apis'
 const Index = () => {
-    const optionSelect = ["Hoạt động", "Khoá"]
-    const [userList, setUserList] = useState([{
-        ip: '113.168.245.103',
-        city: 'Bắc Giang',
-        country: 'VN',
-        postal: '26130',
-        timezone: 'Asia/Bangkok'
-    }])
+    const [userList, setUserList] = useState(null)
     const [countPage, setCountPage] = useState(1)
     const [countMaxPage, setCountMaxPage] = useState(1)
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [searchTimeout, setSearchTimeout] = useState(null);
     const [inputFocused, setInputFocused] = useState(false);
-    const [searchUser, setSearchUser] = useState({ phoneNumber: "", status: "" })
+    const [searchUser, setSearchUser] = useState({ ip: "" })
     const [error, setError] = useState(null)
-    const statusList = [
-        "Hoạt động", "Khoá"
-    ];
     useEffect(() => {
-        // fetchListOfUser(1)
-        //     .then(result => {
-        //         // state.setAuthentication(result.role)
-        //         setUserList(result.data)
-        //         setLoading(false)
-        //         if (0 < result.total % 10 && result.total % 10 < 10) {
-        //             setCountMaxPage(Math.floor(result.total / 10) + 1)
-        //         } else if (result.total === 0) {
-        //             setCountMaxPage(1)
-        //         }
-        //         else {
-        //             setCountMaxPage(Math.floor(result.total / 10))
-        //         }
-        //     })
-        //     .catch(error => {
-        //         // if (error.response.data.message === "You do not have sufficient permissions to perform this function") {
-        //         //     state.setAuthentication(state.authentication ? state.authentication : null)
-        //         // }
-        //         console.log(error)
-        //         setError(error.response.status)
-        //         setLoading(false)
-        //     })
+        fetchListIP(1)
+            .then(result => {
+                // state.setAuthentication(result.role)
+                setUserList(result.data)
+                setLoading(false)
+                if (0 < result.total % 10 && result.total % 10 < 10) {
+                    setCountMaxPage(Math.floor(result.total / 10) + 1)
+                } else if (result.total === 0) {
+                    setCountMaxPage(1)
+                }
+                else {
+                    setCountMaxPage(Math.floor(result.total / 10))
+                }
+            })
+            .catch(error => {
+                // if (error.response.data.message === "You do not have sufficient permissions to perform this function") {
+                //     state.setAuthentication(state.authentication ? state.authentication : null)
+                // }
+                console.log(error)
+                setError(error.response.status)
+                setLoading(false)
+            })
     }, []);
     const handleSetPage = (count) => {
         setUserList()
         setCountPage(count)
-        // fetchSearchUser(searchUser, count)
-        //     .then(result => {
-        //         console.log(result.data)
-        //         setUserList(result.data)
-        //         setLoading(false)
-        //     })
-        //     .catch(error => {
-        //         console.log(error)
-        //         setError(error.response.status)
-        //         setLoading(false)
-        //     })
+        fetchSearchIp(searchUser, count)
+            .then(result => {
+                console.log(result.data)
+                setUserList(result.data)
+                setLoading(false)
+            })
+            .catch(error => {
+                console.log(error)
+                setError(error.response.status)
+                setLoading(false)
+            })
     }
 
     const handleSearchOrder = (e) => {
@@ -71,27 +62,27 @@ const Index = () => {
         if (inputFocused) {
             const timeoutId = setTimeout(() => {
                 setSearchUser({ ...searchUser, [name]: value })
-                // fetchSearchUser({ ...searchUser, [name]: value }, 1)
-                //     .then((result) => {
-
-                //         setUserList(result.data);
-                //         if (0 < result.total % 10 && result.total % 10 < 10) {
-                //             setCountMaxPage(Math.floor(result.total / 10) + 1);
-                //         } else if (result.total === 0) {
-                //             setCountMaxPage(1);
-                //         } else {
-                //             setCountMaxPage(Math.floor(result.total / 10));
-                //         }
-                //     })
-                //     .catch((error) => {
-                //         Swal.fire({
-                //             title: "Ops!",
-                //             text: "Error connect to server!",
-                //             icon: 'error',
-                //             confirmButtonText: 'OK!'
-                //         })
-                //         console.log(error);
-                //     });
+                fetchSearchIp({ ...searchUser, [name]: value }, 1)
+                    .then((result) => {
+                        console.log(result)
+                        setUserList(result.data);
+                        if (0 < result.total % 10 && result.total % 10 < 10) {
+                            setCountMaxPage(Math.floor(result.total / 10) + 1);
+                        } else if (result.total === 0) {
+                            setCountMaxPage(1);
+                        } else {
+                            setCountMaxPage(Math.floor(result.total / 10));
+                        }
+                    })
+                    .catch((error) => {
+                        Swal.fire({
+                            title: "Ops!",
+                            text: "Error connect to server!",
+                            icon: 'error',
+                            confirmButtonText: 'OK!'
+                        })
+                        console.log(error);
+                    });
             }, 1000);
             setSearchTimeout(timeoutId);
         }
@@ -111,19 +102,7 @@ const Index = () => {
                                         </p>
                                     </div>
                                     <ul className="col-lg-3 navbar-nav" style={{ "paddingBottom": "15px", "paddingLeft": "15px" }}>
-                                        <input name='phoneNumber' onChange={e => handleSearchOrder(e)} style={{ borderRadius: "15px" }} type="text" className="form-control" placeholder="Số điện thoại" aria-label="Số điện thoại" />
-                                    </ul>
-                                    <ul className="col-lg-3 navbar-nav" style={{ "paddingBottom": "15px", "paddingLeft": "15px" }}>
-                                        <li className="nav-item nav-search d-lg-block">
-                                            <div className="input-group">
-                                                <select name='status' style={{ borderRadius: "15px" }} onChange={e => handleSearchOrder(e)} type="text" className="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search" >
-                                                    <option value=''>Tất cả</option>\
-                                                    {optionSelect.map((item, index) => {
-                                                        return <option key={index} value={item === "Hoạt động" ? true : false}>{item}</option>
-                                                    })}
-                                                </select>
-                                            </div>
-                                        </li>
+                                        <input name='ip' nBlur={() => setInputFocused(false)} onFocus={() => setInputFocused(true)} onChange={e => handleSearchOrder(e)} style={{ borderRadius: "15px" }} type="text" className="form-control" placeholder="IP" aria-label="IP" />
                                     </ul>
                                 </div>
                                 {userList ? <>
