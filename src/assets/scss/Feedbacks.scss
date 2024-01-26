@@ -83,20 +83,20 @@
                 line-height: normal;
             }
             .board-right-feedback-content {
-                margin:10px 0;
+                margin: 10px 0;
                 .board-right-list-feedbacks {
                     padding: 20px;
-                    display:flex;
+                    display: flex;
                     // align-items: center;
                     gap: 20px;
                     .board-right-image {
-                        cursor:pointer;
+                        cursor: pointer;
                         width: 60px;
                         height: 60px;
                         border-radius: 50%;
                     }
                     .board-right-text {
-                        display:flex;
+                        display: flex;
                         flex-direction: column;
                         // gap:10px;
                         .board-right-text-above {
@@ -116,7 +116,14 @@
                         }
                     }
                 }
+                .fb-pc {
+                    display: block;
+                }
+                .fb-mb {
+                    display: none;
+                }
             }
+
         }
     }
 }
@@ -151,20 +158,28 @@
                 width: 100%;
                 padding: 20px;
                 .board-right-feedback-content {
-                    margin:10px 0;
+                    margin: 10px 0;
                     .board-right-list-feedbacks {
-                        padding: 20px 0;
+                        padding: 20px 0 10px 0;
                         gap: 20px;
                         .board-right-image {
                             width: 95px;
                             height: 95px;
                         }
                         .board-right-text {
-                            gap:10px;
+                            // gap: 10px;
                         }
+                    }
+                    .fb-pc {
+                        display: none;
+                    }
+                    .fb-mb {
+                        padding-bottom:15px;
+                        display: block;
                     }
                 }
             }
+            
         }
     }
 }

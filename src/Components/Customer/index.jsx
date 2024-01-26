@@ -18,21 +18,29 @@ const Index = () => {
     const [feedbacks, setFeedbacks] = useState([
         {
             image: Image1,
+            star:5,
+            type:'Bao xe',
             username: 'Phạm Phương Thuý',
             text: 'Tôi đã sử dụng dịch vụ xe ghép của đơn vị này và thật sự ấn tượng. Tài xế rất chuyên nghiệp và phục vụ tận tình. Giá cả hợp lý và dịch vụ đáng tin cậy. Tôi sẽ tiếp tục sử dụng dịch vụ của họ trong tương lai.'
         },
         {
             image: Image2,
+            star:5,
+            type:'Xe ghép',
             username: 'Nguyễn Bình Minh',
             text: 'Sử dụng dịch vụ xe ghép ở đây là một quyết định đúng đắn. Tôi đã tiết kiệm được thời gian và công sức khi di chuyển. Đặc biệt, dịch vụ bao xe cũng rất ổn định và chất lượng. Tôi rất hạnh phúc với sự phục vụ của họ và sẽ tiếp tục ủng hộ trong tương lai.'
         },
         {
             image: Image3,
+            star:5,
+            type:'Xe ghép',
             username: 'Phan Phương Thảo',
             text: 'Mình thường xuyên đi xe từ Hà Nội đi Bắc Ninh, dịch vụ của nhà xe rất tốt. Xe mới, rộng rãi, đặc biệt là bác tài rất vui tính và nhiệt tình. Tôi vẫn sẽ ủng hộ nhà xe lâu dài.'
         },
         {
             image: Image4,
+            star:5,
+            type:'Bao xe',
             username: 'Nguyễn Thu Hằng',
             text: 'Điều tuyệt vời khi sử dụng dịch vụ bao xe ở đây. Giao hàng được thực hiện đúng hẹn và an toàn. Giá cả phải chăng và phù hợp với chất lượng dịch vụ. Tôi hoàn toàn hài lòng và sẽ giới thiệu cho bạn bè và gia đình của tôi.'
         },

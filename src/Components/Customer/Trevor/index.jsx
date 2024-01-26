@@ -9,7 +9,7 @@ import 'assets/scss/Trevor.scss'
 const Index = () => {
     return (
         <div className='trevor'>
-            <div className='row container' style={{ margin: '0 auto', padding: 0 }}>
+            <div className='row container ' style={{ margin: '0 auto' }}>
                 <div className='title-feedbacks'>
                     <div className='title-feedbacks-above'>Danh lam thắng cảnh</div>
                     <div className='title-feedbacks-under'>Tham quan, du lịch những nơi chứa đựng nhiều khung cảnh lý tưởng!</div>
