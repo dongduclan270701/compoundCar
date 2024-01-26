@@ -1,0 +1,376 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: rgba(217, 217, 217, 0.78);
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+        transition: height 0.5s ease;
+        &.scrolled {
+            height: 70px;
+            .logo {
+                gap: 5px;
+                .svg-logo {
+                    height: 60px;
+                }
+            }
+            .nav {
+                gap: 20px;
+            }
+            .login {
+                padding: 5px 9px;
+            }
+        }
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            .svg-logo {
+                width: 80px;
+                height: 80px;
+                fill: rgba(255, 255, 255, 0);
+            }
+            .text-logo {
+                width: auto;
+                color: #fff;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-transform: uppercase;
+                .text-logo-color {
+                    color: red;
+                }
+            }
+        }
+        .nav {
+            display: inline-flex;
+            align-items: center;
+            gap: 27px;
+            .nav-item {
+                cursor: pointer;
+                color: black;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+            .login {
+                color: white;
+                display: flex;
+                padding: 8px 9px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                background: red;
+            }
+            .login:hover {
+                color: white !important;
+                background: var(--red, rgb(203, 19, 19));
+            }
+            .nav-item:hover {
+                color: red;
+            }
+        }
+    }
+    .container-header-mobile {
+        display: none;
+    }
+    .menu-mobile {
+        display: none;
+    }
+}
+.hotline-icon-one-pc{
+    z-index: 999;
+    width: max-content;
+    background: rgb(27, 27, 230);
+    border-radius: 50%;
+    padding: 10px;
+    animation: pulse 1.5s infinite; 
+    .hotline-icon-svg {
+        width: 50px;
+        animation: rotate 1.5s infinite;
+    }
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+}
+.hotline-icon-one-ios{
+    z-index: 999;
+    width: max-content;
+    background: rgb(27, 27, 230);
+    border-radius: 50%;
+    padding: 10px;
+    animation: pulse 1.5s infinite; 
+    .hotline-icon-svg {
+        width: 50px;
+        animation: rotate 1.5s infinite;
+    }
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    display:none
+}
+.hotline-icon-one-android{
+    z-index: 999;
+    width: max-content;
+    background: rgb(27, 27, 230);
+    border-radius: 50%;
+    padding: 10px;
+    animation: pulse 1.5s infinite; 
+    .hotline-icon-svg {
+        width: 50px;
+        animation: rotate 1.5s infinite;
+    }
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    display:none
+}
+.hotline-icon-two{
+    z-index: 999;
+    width: max-content;
+    background: rgb(214, 40, 40);
+    border-radius: 50%;
+    padding: 10px;
+    animation: pulse 1.5s infinite; 
+    .hotline-icon-svg {
+        width: 50px;
+        animation: rotate 1.5s infinite;
+    }
+    position: fixed;
+    bottom: 150px;
+    right: 40px;
+}
+.hotline-icon-three{
+    z-index: 999;
+    width: max-content;
+    background: rgb(255 255 255);
+    border-radius: 50%;
+    padding: 10px;
+    animation: pulse 1.5s infinite; 
+    .hotline-icon-svg {
+        width: 50px;
+        animation: rotate 1.5s infinite;
+    }
+    position: fixed;
+    bottom: 200px;
+    left: 30px;
+    right: 0;
+}
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-15deg);
+      }
+      50% {
+        transform: rotate(15deg);
+      }
+      100% {
+        transform: rotate(-15deg);
+      }
+}
+.toggle-login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: rgba(217, 217, 217, 0.78);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    .form-login {
+        width: 600px;
+        height: auto;
+        border: 1px solid white;
+        border-radius: 15px;
+        background-color: white;
+        animation-duration: 0.75s;
+        animation-name: slideIn;
+        overflow: hidden;
+        padding: 20px;
+        .head-form-login {
+            display: flex;
+            justify-content: center;
+            .title-head-form-login {
+                flex-grow: 1;
+                text-align: center;
+                color: red;
+                font-size: 30px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+            .icon-head-form-login {
+                cursor: pointer;
+                width: 15px;
+                height: 15px;
+            }
+        }
+        .content-form-login {
+            padding: 0 50px;
+            gap: 15px;
+            display: flex;
+            flex-direction: column;
+            .text-form-login {
+                display: flex;
+                flex-direction: column;
+                .input-form {
+                    margin-top: 5px;
+                    border-radius: 15px;
+                    padding: 10px;
+                    border: 1px solid black;
+                }
+            }
+        }
+        .under-form-login {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            .button-login {
+                margin: 10px;
+                padding: 10px;
+                border: 1px solid red;
+                border-radius: 15px;
+                background-color: red;
+                color: white;
+            }
+            .button-login:hover {
+                background: var(--red, rgb(203, 19, 19));
+            }
+            .button-change-form {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+            .button-change-form:hover {
+                text-decoration: none;
+                color: red;
+            }
+        }
+    }
+    .flip {
+        animation-duration: 0s;
+        animation-name: slideOut;
+        overflow: hidden;
+    }
+    @keyframes slideIn {
+        0% {
+            transform: rotateY(180deg);
+        }
+
+        100% {
+            transform: rotateY(0deg);
+        }
+    }
+    @keyframes slideOut {
+        0% {
+            transform: rotateY(180deg);
+        }
+
+        100% {
+            transform: rotateY(0deg);
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    .header {
+        .container-header {
+            display: none;
+        }
+        .container-header-mobile {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+            .logo {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                .svg-logo {
+                    width: 50px;
+                    height: 50px;
+                    fill: rgba(255, 255, 255, 0);
+                }
+                .text-logo {
+                    width: auto;
+                    color: #fff;
+                    font-size: 13px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    text-transform: uppercase;
+                    .text-logo-color {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+    .menu-mobile {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        background: rgba(217, 217, 217, 0.78);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: rgba(244, 244, 244, 0.903);
+        .list-menu-mobile {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 10px;
+            gap: 30px;
+            .item-menu-mobile {
+                font-size: 20px;
+            }
+            .login {
+                border-radius: 15px;
+                color: white;
+                display: flex;
+                padding: 8px 9px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                background: red;
+            }
+            .login:hover {
+                color: white !important;
+                background: var(--red, rgb(203, 19, 19));
+            }
+        }
+    }
+    .hotline-icon-one-pc{
+        display:none
+    }
+    .hotline-icon-one-ios{
+        display:flex
+    }
+    .hotline-icon-one-android{
+        display:flex
+    }
+}
