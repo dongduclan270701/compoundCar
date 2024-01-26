@@ -15,14 +15,21 @@ const Index = (props) => {
         window.location.reload();
     }
     useEffect(() => {
-        fetchListOfNotice()
-            .then(result => {
-                setListNotice(result)
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        const fetchAndSetList = () => {
+            fetchListOfNotice()
+                .then(result => {
+                    document.title = `(${result.length}) đơn hàng mới`
+                    setListNotice(result)
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        }
+        fetchAndSetList()
+        const intervalId = setInterval(fetchAndSetList, 5 * 60 * 1000)
+        return () => clearInterval(intervalId)
     }, []);
+
 
     const handleReadNotice = (id, isReadAdmin) => {
         if (!isReadAdmin) {

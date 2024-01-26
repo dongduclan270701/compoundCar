@@ -11,7 +11,7 @@ const Index = () => {
                 </div>
                 <div className='content'>
                     <div className='content-hotline'>
-                        <div className='content-desc'>Hotline: 0912977981</div>
+                        <div className='content-desc'>Hotline: 0374216188</div>
                         <div className='content-desc'>Gmail: xxx@gmail.com</div>
                         <div className='content-desc'>Hoạt động: t2- cn ( 5h - 21h )</div>
                     </div>

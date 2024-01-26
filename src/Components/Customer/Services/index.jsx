@@ -1,13 +1,13 @@
 import React from 'react';
-import ImageServices1 from 'assets/images/du-lich-lang-giang.jpeg'
-import ImageServices2 from 'assets/images/du-lich-luc-nam.jpeg'
+import ImageServices7 from 'assets/images/du-lich-lang-giang.jpeg'
+import ImageServices8 from 'assets/images/du-lich-luc-nam.jpeg'
 import ImageServices3 from 'assets/images/du-lich-luc-ngan.jpeg'
 import ImageServices4 from 'assets/images/du-lich-son-dong.jpeg'
 import ImageServices5 from 'assets/images/du-lich-tan-yen.jpeg'
 import ImageServices6 from 'assets/images/du-lich-yen-dung.jpeg'
-import ImageServices7 from 'assets/images/du-lich-yen-the.jpeg'
-import ImageServices8 from 'assets/images/Khu-bao-ton-thien-nhien-Tay-Tien-Tu.webp'
-import ImageServices9 from 'assets/images/cao-nguyen-dong-cao-2.webp'
+import ImageServices9 from 'assets/images/du-lich-yen-the.jpeg'
+import ImageServices1 from 'assets/images/Khu-bao-ton-thien-nhien-Tay-Tien-Tu.webp'
+import ImageServices2 from 'assets/images/cao-nguyen-dong-cao-2.webp'
 import Car from 'assets/svg/car-svgrepo-com.svg'
 import Price from 'assets/svg/price-tag-offer-badge-svgrepo-com.svg'
 import Phone from 'assets/svg/phone-svgrepo-com (1).svg'
@@ -15,7 +15,8 @@ import Day from 'assets/svg/day-calendar-svgrepo-com.svg'
 import Time from 'assets/svg/time1-svgrepo-com.svg'
 import Connect from 'assets/svg/arrow-left-right-svgrepo-com.svg'
 import 'assets/scss/Services.scss'
-const Index = () => {
+const Index = (props) => {
+    const { website } = props
     return (
         <div className='services' id='services'>
             <div className='row container services-content'>
@@ -34,62 +35,62 @@ const Index = () => {
                     </ol>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img className="d-block w-100" style={{borderRadius:15}} src={ImageServices1} alt="First slide" />
+                            <img className="d-block w-100 img-fluid" style={{ borderRadius: 15 }} src={ImageServices1} alt="First slide" />
                             <div className="carousel-caption d-none d-md-block">
                                 <h3 style={{ fontWeight: 700, fontSize: 26, width: 'max-content', display: 'flex', margin: '0 auto', borderRadius: 15, padding: 5 }}>Du lịch Lạng Giang</h3>
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" style={{borderRadius:15}} src={ImageServices2} alt="Second slide" />
+                            <img className="d-block w-100 img-fluid" style={{ borderRadius: 15 }} src={ImageServices2} alt="Second slide" />
                             <div className="carousel-caption d-none d-md-block">
                                 <h3 style={{ fontWeight: 700, fontSize: 26, width: 'max-content', display: 'flex', margin: '0 auto', borderRadius: 15, padding: 5 }}>Du lịch Lục Nam</h3>
 
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" style={{borderRadius:15}} src={ImageServices3} alt="Third slide" />
+                            <img className="d-block w-100 img-fluid" style={{ borderRadius: 15 }} src={ImageServices3} alt="Third slide" />
                             <div className="carousel-caption d-none d-md-block">
                                 <h3 style={{ fontWeight: 700, fontSize: 26, width: 'max-content', display: 'flex', margin: '0 auto', borderRadius: 15, padding: 5 }}>Du lịch Lục Ngạn</h3>
 
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" style={{borderRadius:15}} src={ImageServices4} alt="Third slide" />
+                            <img className="d-block w-100 img-fluid" style={{ borderRadius: 15 }} src={ImageServices4} alt="Third slide" />
                             <div className="carousel-caption d-none d-md-block">
                                 <h3 style={{ fontWeight: 700, fontSize: 26, width: 'max-content', display: 'flex', margin: '0 auto', borderRadius: 15, padding: 5 }}>Du lịch Sơn Động</h3>
 
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" style={{borderRadius:15}} src={ImageServices5} alt="Third slide" />
+                            <img className="d-block w-100 img-fluid" style={{ borderRadius: 15 }} src={ImageServices5} alt="Third slide" />
                             <div className="carousel-caption d-none d-md-block">
                                 <h3 style={{ fontWeight: 700, fontSize: 26, width: 'max-content', display: 'flex', margin: '0 auto', borderRadius: 15, padding: 5 }}>Du lịch Tân Yên</h3>
 
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" style={{borderRadius:15}} src={ImageServices6} alt="Third slide" />
+                            <img className="d-block w-100 img-fluid" style={{ borderRadius: 15 }} src={ImageServices6} alt="Third slide" />
                             <div className="carousel-caption d-none d-md-block">
                                 <h3 style={{ fontWeight: 700, fontSize: 26, width: 'max-content', display: 'flex', margin: '0 auto', borderRadius: 15, padding: 5 }}>Du lịch Yên Dũng</h3>
 
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" style={{borderRadius:15}} src={ImageServices7} alt="Third slide" />
+                            <img className="d-block w-100 img-fluid" style={{ borderRadius: 15 }} src={ImageServices7} alt="Third slide" />
                             <div className="carousel-caption d-none d-md-block">
                                 <h3 style={{ fontWeight: 700, fontSize: 26, width: 'max-content', display: 'flex', margin: '0 auto', borderRadius: 15, padding: 5 }}>Du lịch Yên Thê</h3>
 
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" style={{borderRadius:15}} src={ImageServices8} alt="Third slide" />
+                            <img className="d-block w-100 img-fluid" style={{ borderRadius: 15 }} src={ImageServices8} alt="Third slide" />
                             <div className="carousel-caption d-none d-md-block">
                                 <h3 style={{ fontWeight: 700, fontSize: 26, width: 'max-content', display: 'flex', margin: '0 auto', borderRadius: 15, padding: 5 }}>KHU BẢO TỒN TÂY YÊN TỬ - BẮC GIANG</h3>
 
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img className="d-block w-100" style={{borderRadius:15}} src={ImageServices9} alt="Third slide" />
+                            <img className="d-block w-100 img-fluid" style={{ borderRadius: 15 }} src={ImageServices9} alt="Third slide" />
                             <div className="carousel-caption d-none d-md-block">
                                 <h3 style={{ fontWeight: 700, fontSize: 26, width: 'max-content', display: 'flex', margin: '0 auto', borderRadius: 15, padding: 5 }}>ĐỒNG CAO - BẮC GIANG</h3>
 
@@ -109,19 +110,19 @@ const Index = () => {
                     <div className='title-services'>Các dịch vụ của chúng tôi</div>
                     <div className='content-services'>
                         <img src={Car} className='services-icon' alt="Logo" />
-                        <div className='services-icon-content'>Tài xế tìm khách nhanh và dễ dàng.</div>
+                        <div className='services-icon-content'>{website.service.no_1}</div>
                     </div>
                     <div className='content-services'>
                         <img src={Price} className='services-icon' alt="Logo" />
-                        <div className='services-icon-content'>Giá ghép chỉ có 200.000 VNĐ.</div>
+                        <div className='services-icon-content'>{website.service.no_2}</div>
                     </div>
                     <div className='content-services'>
                         <img src={Price} className='services-icon' alt="Logo" />
-                        <div className='services-icon-content'>Giá bao xe 500.000 VNĐ trở lên tuỳ điểm.</div>
+                        <div className='services-icon-content'>{website.service.no_3}</div>
                     </div>
                     <div className='content-services'>
                         <img src={Price} className='services-icon' alt="Logo" />
-                        <div className='services-icon-content'>Giá vận chuyển đồ 50.000 VNĐ.</div>
+                        <div className='services-icon-content'>{website.service.no_4}</div>
                     </div>
                     <div className='content-services'>
                         <div className='services-icon-content'>Bắc Giang</div>
@@ -132,19 +133,19 @@ const Index = () => {
                     </div>
                     <div className='content-services'>
                         <img src={Phone} className='services-icon' alt="Logo" />
-                        <div className='services-icon-content'>0912977981</div>
+                        <div className='services-icon-content'>{website.service.no_5}</div>
                     </div>
                     <div className='content-services'>
                         <img src={Day} className='services-icon' alt="Logo" />
-                        <div className='services-icon-content'>Các ngày trong tuần.</div>
+                        <div className='services-icon-content'>{website.service.no_6}</div>
                     </div>
                     <div className='content-services'>
                         <img src={Time} className='services-icon' alt="Logo" />
-                        <div className='services-icon-content'>Bắt đầu từ 5h đến 21h hằng ngày.</div>
+                        <div className='services-icon-content'>{website.service.no_7}</div>
                     </div>
                     <div className='content-services'>
                         <img src={Car} className='services-icon' alt="Logo" />
-                        <div className='services-icon-content'>Đón và trả tận nơi.</div>
+                        <div className='services-icon-content'>{website.service.no_8}</div>
                     </div>
                 </div>
             </div>

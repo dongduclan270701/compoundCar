@@ -87,17 +87,18 @@
                 .board-right-list-feedbacks {
                     padding: 20px;
                     display:flex;
-                    align-items: center;
-                    gap: 40px;
+                    // align-items: center;
+                    gap: 20px;
                     .board-right-image {
-                        width: 115px;
-                        height: 115px;
+                        cursor:pointer;
+                        width: 60px;
+                        height: 60px;
                         border-radius: 50%;
                     }
                     .board-right-text {
                         display:flex;
                         flex-direction: column;
-                        gap:10px;
+                        // gap:10px;
                         .board-right-text-above {
                             color: #000;
                             font-size: 16px;

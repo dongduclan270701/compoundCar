@@ -38,8 +38,8 @@ const Index = (props) => {
                                 return <div className='board-right-list-feedbacks' key={index}>
                                     <img src={item.image} className='board-right-image' alt={item.image} />
                                     <div className='board-right-text'>
-                                        <div className='board-right-text-above'>{item.text}</div>
                                         <div className='board-right-text-under'>{item.username}</div>
+                                        <div className='board-right-text-above'>{item.text}</div>
                                     </div>
                                 </div>
                             })}
