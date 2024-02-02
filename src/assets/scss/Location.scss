@@ -1,0 +1,65 @@
+.container-location {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    top: 440px;
+    position: absolute;
+    .location {
+        width: max-content;
+        display: inline-flex;
+        padding: 40px;
+        align-items: flex-start;
+        gap: 24px;
+        border-radius: 15px;
+        background: #fff;
+        .location-one,
+        .location-two,
+        .location-three {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            .location-icon {
+                width: 50px;
+                height: 50px;
+            }
+            .location-content {
+                color: red;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-transform: uppercase;
+            }
+        }
+        .location-connect-icon {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    .container-location {
+        top: 207px;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        .location {
+            padding: 15px;
+            gap: 10px;
+            .location-one,
+            .location-two,
+            .location-three {
+                gap: 0px;
+                .location-icon {
+                }
+                .location-content {
+                }
+            }
+            .location-connect-icon {
+                width: 30px;
+            }
+        }
+    }
+}
