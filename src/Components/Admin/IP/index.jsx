@@ -41,7 +41,6 @@ const Index = () => {
         setCountPage(count)
         fetchSearchIp(searchUser, count)
             .then(result => {
-                console.log(result.data)
                 setUserList(result.data)
                 setLoading(false)
             })
@@ -139,7 +138,7 @@ const Index = () => {
                                                             </span>
                                                         </td>
                                                         <td>
-                                                            2
+                                                            {item.count}
                                                         </td>
                                                         <td>
                                                             {item.postal}

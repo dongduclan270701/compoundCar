@@ -58,7 +58,7 @@ const Index = (props) => {
             .then(result => {
                 setWebsite(result.data[0])
                 onHandleGetWebsite(result.data[0])
-                // console.log(result.data[0])
+                console.log(result.data[0])
             })
             .catch(error => {
                 console.log(error)
