@@ -153,7 +153,7 @@ const Index = () => {
                 </a>
             </div>
             <div className='hotline-icon-two'>
-                <a href="tel:0354239191"><img src={Phone} onClick={() => { }} className='hotline-icon-svg' alt="Logo" /></a>
+                <a href="tel:0374216188"><img src={Phone} onClick={() => { }} className='hotline-icon-svg' alt="Logo" /></a>
             </div>
             {/* <div className='hotline-icon-three'>
                 <img src={Messager} onClick={() => { } } className='hotline-icon-svg' alt="Logo"/>

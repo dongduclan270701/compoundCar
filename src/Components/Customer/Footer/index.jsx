@@ -13,7 +13,7 @@ const Index = (props) => {
                 <div className='content'>
                     <div className='content-hotline'>
                         <div className='content-desc'>Hotline: {website.service.no_5}</div>
-                        <div className='content-desc'>Gmail: xxx@gmail.com</div>
+                        <div className='content-desc'>Gmail: dongduclan277@gmail.com</div>
                         <div className='content-desc'>Hoạt động: {website.service.no_7}</div>
                     </div>
                     <div className='content-commitment'>
