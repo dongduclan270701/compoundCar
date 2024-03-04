@@ -51,7 +51,7 @@ const Index = () => {
                 }
             });
             
-            bookingCar(booking)
+            bookingCar({...booking,createDate:{time:time,date:today}})
                 .then(result => {
                     const newData = {
                         username: booking.username,
