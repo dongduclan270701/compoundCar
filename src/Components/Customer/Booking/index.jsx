@@ -5,7 +5,7 @@ import Close from 'assets/svg/close-square-svgrepo-com.svg'
 import { bookingCar, fetchCreateNotice } from 'Apis'
 import Swal from 'sweetalert2'
 const Index = () => {
-    const [isBooking, setIsBooking] = useState(true)
+    const [isBooking, setIsBooking] = useState(false)
     const [booking, setBooking] = useState({
         pick_up_location: "",
         destination: "",
@@ -35,67 +35,73 @@ const Index = () => {
         });
     };
     const handleSubmitBooking = () => {
-        if (booking.username.trim() === "" || booking.username === 0) { showAlert('Chờ đã!', 'Yêu cầu nhập đầy đủ Họ và Tên !') }
-        else if (booking.pick_up_location.trim() === "" || booking.pick_up_location === 0) { showAlert('Chờ đã!', 'Yêu cầu nhập rõ vị trí mà tài xế có thể đón bạn!') }
-        else if (booking.note.trim() === "" || booking.note === 0) { showAlert('Chờ đã!', 'Yêu cầu nhập rõ ngày giờ cụ thể để tài xế nắm rõ lịch trình của bạn!') }
-        else if (booking.destination.trim() === "" || booking.destination === 0) { showAlert('Chờ đã!', 'Yêu cầu nhập rõ vị trí mà bạn muốn đến!') }
-        else if (booking.phoneNumber.trim() === "" || booking.phoneNumber === 0) { showAlert('Chờ đã!', 'Yêu cầu nhập số điện thoại!') }
-        else {
-            Swal.fire({
-                title: 'Đang cập nhật!',
-                html: 'Vui lòng chờ...',
-                allowEscapeKey: false,
-                allowOutsideClick: false,
-                didOpen: () => {
-                    Swal.showLoading()
-                }
-            });
+        // if (booking.username.trim() === "" || booking.username === 0) { showAlert('Chờ đã!', 'Yêu cầu nhập đầy đủ Họ và Tên !') }
+        // else if (booking.pick_up_location.trim() === "" || booking.pick_up_location === 0) { showAlert('Chờ đã!', 'Yêu cầu nhập rõ vị trí mà tài xế có thể đón bạn!') }
+        // else if (booking.note.trim() === "" || booking.note === 0) { showAlert('Chờ đã!', 'Yêu cầu nhập rõ ngày giờ cụ thể để tài xế nắm rõ lịch trình của bạn!') }
+        // else if (booking.destination.trim() === "" || booking.destination === 0) { showAlert('Chờ đã!', 'Yêu cầu nhập rõ vị trí mà bạn muốn đến!') }
+        // else if (booking.phoneNumber.trim() === "" || booking.phoneNumber === 0) { showAlert('Chờ đã!', 'Yêu cầu nhập số điện thoại!') }
+        // else {
+        //     Swal.fire({
+        //         title: 'Đang cập nhật!',
+        //         html: 'Vui lòng chờ...',
+        //         allowEscapeKey: false,
+        //         allowOutsideClick: false,
+        //         didOpen: () => {
+        //             Swal.showLoading()
+        //         }
+        //     });
             
-            bookingCar({...booking,createDate:{time:time,date:today}})
-                .then(result => {
-                    const newData = {
-                        username: booking.username,
-                        phoneNumber: booking.phoneNumber,
-                        content: `${booking.username} - ${booking.phoneNumber} `,
-                        status: 'Chờ xác nhận',
-                        createDate: {
-                            time: time,
-                            date: today
-                        }
-                    }
-                    fetchCreateNotice(newData)
-                        .then(resultNotice => {
-                            return 0
-                        })
-                        .catch(error => {
-                            console.log(error)
-                        })
-                    setBooking({
-                        pick_up_location: "",
-                        destination: "",
-                        note: '',
-                        username: "",
-                        phoneNumber: ""
-                    })
-                    Swal.close()
-                    Swal.fire({
-                        title: "Đặt xe thành công",
-                        text: "Bạn đã đặt xe thành công, hãy chờ tài xế liên hệ lại cho bạn để xác nhận!",
-                        icon: 'success',
-                        confirmButtonText: 'OK!'
-                    });
-                    setIsBooking(false)
-                })
-                .catch(error => {
-                    Swal.fire({
-                        title: "Ops!",
-                        text: "Error connect to server!",
-                        icon: 'error',
-                        confirmButtonText: 'OK!'
-                    })
-                    console.log(error)
-                })
-        }
+        //     bookingCar({...booking,createDate:{time:time,date:today}})
+        //         .then(result => {
+        //             const newData = {
+        //                 username: booking.username,
+        //                 phoneNumber: booking.phoneNumber,
+        //                 content: `${booking.username} - ${booking.phoneNumber} `,
+        //                 status: 'Chờ xác nhận',
+        //                 createDate: {
+        //                     time: time,
+        //                     date: today
+        //                 }
+        //             }
+        //             fetchCreateNotice(newData)
+        //                 .then(resultNotice => {
+        //                     return 0
+        //                 })
+        //                 .catch(error => {
+        //                     console.log(error)
+        //                 })
+        //             setBooking({
+        //                 pick_up_location: "",
+        //                 destination: "",
+        //                 note: '',
+        //                 username: "",
+        //                 phoneNumber: ""
+        //             })
+        //             Swal.close()
+        //             Swal.fire({
+        //                 title: "Đặt xe thành công",
+        //                 text: "Bạn đã đặt xe thành công, hãy chờ tài xế liên hệ lại cho bạn để xác nhận!",
+        //                 icon: 'success',
+        //                 confirmButtonText: 'OK!'
+        //             });
+        //             setIsBooking(false)
+        //         })
+        //         .catch(error => {
+        //             Swal.fire({
+        //                 title: "Ops!",
+        //                 text: "Error connect to server!",
+        //                 icon: 'error',
+        //                 confirmButtonText: 'OK!'
+        //             })
+        //             console.log(error)
+        //         })
+        // }
+        Swal.fire({
+            title: "Thông báo",
+            text: "Hãy liên hệ 0374216188 - 0354239191 để đặt xe. Cảm ơn!",
+            icon: 'warning',
+            confirmButtonText: 'OK!'
+        });
     }
     return (
         <>
